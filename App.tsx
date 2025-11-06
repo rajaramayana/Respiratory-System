@@ -10,6 +10,7 @@ import { generateModuleContent } from './services/geminiService';
 import type { SyllabusModule, ModuleName, Language } from './types';
 import { MODULES } from './constants';
 import { useLocalStorage } from './hooks/useLocalStorage';
+import { Chatbot } from './components/Chatbot';
 
 export default function App() {
   const [storedModule, setStoredModule] = useLocalStorage<ModuleName>('gmTutorModule', 'Respiratory System');
@@ -115,6 +116,7 @@ export default function App() {
           {renderContent()}
         </main>
       </div>
+      <Chatbot moduleData={currentModuleData} />
     </div>
   );
 }

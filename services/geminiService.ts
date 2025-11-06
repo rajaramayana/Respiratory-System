@@ -1,9 +1,5 @@
 
-import { GoogleGenAI, Type } from "@google/genai";
 import type { SyllabusModule, ModuleName, Language } from '../types';
-
-// TODO: Replace with your actual API key from environment variables
-// const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const respiratorySystemData: SyllabusModule = {
   "module_title": "Respiratory System",
@@ -269,9 +265,9 @@ const respiratorySystemData: SyllabusModule = {
 
 /**
  * Simulates a call to the Gemini API to generate structured educational content.
- * In a real application, this would construct a prompt with the syllabus,
- * desired module, language, and the JSON schema, then make a call to the
- * Gemini API.
+ * In a real application, this would construct a prompt and call the Gemini API.
+ * The new chatbot feature makes live calls to the Gemini API, while this function
+ * currently uses mock data for demonstration.
  * 
  * @param moduleName The name of the module to generate content for.
  * @param language The desired language.
@@ -282,18 +278,6 @@ export const generateModuleContent = async (
   language: Language
 ): Promise<SyllabusModule> => {
   console.log(`Fetching content for: ${moduleName} in ${language}`);
-
-  // TODO: Implement actual Gemini API call
-  // const prompt = `Generate Module: ${moduleName} (${language})...`;
-  // const response = await ai.models.generateContent({
-  //   model: 'gemini-2.5-flash',
-  //   contents: prompt,
-  //   config: {
-  //     responseMimeType: "application/json",
-  //     responseSchema: { /* The schema from types.ts */ }
-  //   }
-  // });
-  // return JSON.parse(response.text);
 
   // Mocked response for demonstration
   await new Promise(res => setTimeout(res, 500)); 
